@@ -40,203 +40,209 @@
 		.button-them {
 			background-color: #eacd02 !important;
 		}
+
 		@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
 
-:root {
-  /* Colors */
-  --brand-color: hsl(46, 100%, 50%);
-  --black: hsl(0, 0%, 0%);
-  --white: hsl(0, 0%, 100%);
-  /* Fonts */
-  --font-title: "Montserrat", sans-serif;
-  --font-text: "Lato", sans-serif;
-}
+		:root {
+			/* Colors */
+			--brand-color: hsl(46, 100%, 50%);
+			--black: hsl(0, 0%, 0%);
+			--white: hsl(0, 0%, 100%);
+			/* Fonts */
+			--font-title: "Montserrat", sans-serif;
+			--font-text: "Lato", sans-serif;
+		}
 
-/* RESET */
+		/* RESET */
 
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+		/* Box sizing rules */
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+		}
 
-/* Remove default margin */
-body,
-h2,
-p {
-  margin: 0;
-}
+		/* Remove default margin */
+		body,
+		h2,
+		p {
+			margin: 0;
+		}
 
-/* GLOBAL STYLES */
-body {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-}
+		/* GLOBAL STYLES */
+		body {
+			display: grid;
+			place-items: center;
+			height: 100vh;
+		}
 
-h2 {
-  font-size: 2.25rem;
-  font-family: var(--font-title);
-  color: var(--white);
-  line-height: 1.1;
-}
+		h2 {
+			font-size: 2.25rem;
+			font-family: var(--font-title);
+			color: var(--white);
+			line-height: 1.1;
+		}
 
-p {
-  font-family: var(--font-text);
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--white);
-}
+		p {
+			font-family: var(--font-text);
+			font-size: 1rem;
+			line-height: 1.5;
+			color: var(--white);
+		}
 
-.flow > * + * {
-  margin-top: var(--flow-space, 1em);
-}
+		.flow>*+* {
+			margin-top: var(--flow-space, 1em);
+		}
 
-/* CARD COMPONENT */
+		/* CARD COMPONENT */
 
-.card {
-  display: grid;
-  place-items: center;
-  width: 80vw;
-  max-width: 21.875rem;
-  height: 28.125rem;
-  overflow: hidden;
-  border-radius: 0.625rem;
-  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
-}
+		.card {
+			display: grid;
+			place-items: center;
+			/* height: 28.125rem; */
+			overflow: hidden;
+			border-radius: 0.625rem;
+			box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+			/* height: 14rem; */
+			width: 16rem;
+			margin-bottom: 2rem;
+			background-color: #EACD02;
+			
+		}
+		.pending-tm{
+			padding: 1rem;
+			color: #000;
+		}
+		.card>* {
+			grid-column: 1 / 2;
+			grid-row: 1 / 2;
+		}
 
-.card > * {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-}
+		.card__background {
+			object-fit: cover;
+			max-width: 100%;
+			height: 100%;
+		}
 
-.card__background {
-  object-fit: cover;
-  max-width: 100%;
-  height: 100%;
-}
+		.card__content {
+			--flow-space: 0.9375rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-self: flex-end;
+			height: 91%;
+			padding: 12% 1.25rem 1.875rem;
+			background: linear-gradient(180deg,
+					hsla(0, 0%, 0%, 0) 0%,
+					hsla(0, 0%, 0%, 0.3) 10%,
+					hsl(0, 0%, 0%) 100%);
+		}
 
-.card__content {
-  --flow-space: 0.9375rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-self: flex-end;
-  height: 55%;
-  padding: 12% 1.25rem 1.875rem;
-  background: linear-gradient(
-    180deg,
-    hsla(0, 0%, 0%, 0) 0%,
-    hsla(0, 0%, 0%, 0.3) 10%,
-    hsl(0, 0%, 0%) 100%
-  );
-}
+		.card__content--container {
+			--flow-space: 1.25rem;
+		}
 
-.card__content--container {
-  --flow-space: 1.25rem;
-}
+		.card__title {
+			position: relative;
+			width: fit-content;
+			width: -moz-fit-content;
+			/* Prefijo necesario para Firefox  */
+		}
 
-.card__title {
-  position: relative;
-  width: fit-content;
-  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
-}
+		.card__title::after {
+			content: "";
+			position: absolute;
+			height: 0.3125rem;
+			width: calc(100% + 1.25rem);
+			bottom: calc((1.25rem - 0.5rem) * -1);
+			left: -1.25rem;
+			background-color: var(--brand-color);
+		}
 
-.card__title::after {
-  content: "";
-  position: absolute;
-  height: 0.3125rem;
-  width: calc(100% + 1.25rem);
-  bottom: calc((1.25rem - 0.5rem) * -1);
-  left: -1.25rem;
-  background-color: var(--brand-color);
-}
+		.card__button {
+			padding: 0.75em 1.6em;
+			width: fit-content;
+			width: -moz-fit-content;
+			/* Prefijo necesario para Firefox  */
+			font-variant: small-caps;
+			font-weight: bold;
+			border-radius: 0.45em;
+			border: none;
+			background-color: var(--brand-color);
+			font-family: var(--font-title);
+			font-size: 1.125rem;
+			color: var(--black);
+		}
 
-.card__button {
-  padding: 0.75em 1.6em;
-  width: fit-content;
-  width: -moz-fit-content; /* Prefijo necesario para Firefox  */
-  font-variant: small-caps;
-  font-weight: bold;
-  border-radius: 0.45em;
-  border: none;
-  background-color: var(--brand-color);
-  font-family: var(--font-title);
-  font-size: 1.125rem;
-  color: var(--black);
-}
+		.card__button:focus {
+			outline: 2px solid black;
+			outline-offset: -5px;
+		}
 
-.card__button:focus {
-  outline: 2px solid black;
-  outline-offset: -5px;
-}
+		@media (any-hover: hover) and (any-pointer: fine) {
+			.card__content {
+				transform: translateY(62%);
+				transition: transform 500ms ease-out;
+				transition-delay: 500ms;
+			}
 
-@media (any-hover: hover) and (any-pointer: fine) {
-  .card__content {
-    transform: translateY(62%);
-    transition: transform 500ms ease-out;
-    transition-delay: 500ms;
-  }
+			.card__title::after {
+				opacity: 0;
+				transform: scaleX(0);
+				transition: opacity 1000ms ease-in, transform 500ms ease-out;
+				transition-delay: 500ms;
+				transform-origin: right;
+			}
 
-  .card__title::after {
-    opacity: 0;
-    transform: scaleX(0);
-    transition: opacity 1000ms ease-in, transform 500ms ease-out;
-    transition-delay: 500ms;
-    transform-origin: right;
-  }
+			.card__background {
+				transition: transform 500ms ease-in;
+			}
 
-  .card__background {
-    transition: transform 500ms ease-in;
-  }
+			.card__content--container> :not(.card__title),
+			.card__button {
+				opacity: 0;
+				transition: transform 500ms ease-out, opacity 500ms ease-out;
+			}
 
-  .card__content--container > :not(.card__title),
-  .card__button {
-    opacity: 0;
-    transition: transform 500ms ease-out, opacity 500ms ease-out;
-  }
+			.card:hover,
+			.card:focus-within {
+				transform: scale(1.05);
+				transition: transform 500ms ease-in;
+			}
 
-  .card:hover,
-  .card:focus-within {
-    transform: scale(1.05);
-    transition: transform 500ms ease-in;
-  }
+			.card:hover .card__content,
+			.card:focus-within .card__content {
+				transform: translateY(0);
+				transition: transform 500ms ease-in;
+			}
 
-  .card:hover .card__content,
-  .card:focus-within .card__content {
-    transform: translateY(0);
-    transition: transform 500ms ease-in;
-  }
+			.card:focus-within .card__content {
+				transition-duration: 0ms;
+			}
 
-  .card:focus-within .card__content {
-    transition-duration: 0ms;
-  }
+			.card:hover .card__background,
+			.card:focus-within .card__background {
+				transform: scale(1.3);
+			}
 
-  .card:hover .card__background,
-  .card:focus-within .card__background {
-    transform: scale(1.3);
-  }
+			.card:hover .card__content--container> :not(.card__title),
+			.card:hover .card__button,
+			.card:focus-within .card__content--container> :not(.card__title),
+			.card:focus-within .card__button {
+				opacity: 1;
+				transition: opacity 500ms ease-in;
+				transition-delay: 1000ms;
+			}
 
-  .card:hover .card__content--container > :not(.card__title),
-  .card:hover .card__button,
-  .card:focus-within .card__content--container > :not(.card__title),
-  .card:focus-within .card__button {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
-    transition-delay: 1000ms;
-  }
-
-  .card:hover .card__title::after,
-  .card:focus-within .card__title::after {
-    opacity: 1;
-    transform: scaleX(1);
-    transform-origin: left;
-    transition: opacity 500ms ease-in, transform 500ms ease-in;
-    transition-delay: 500ms;
-  }
-}
-
+			.card:hover .card__title::after,
+			.card:focus-within .card__title::after {
+				opacity: 1;
+				transform: scaleX(1);
+				transform-origin: left;
+				transition: opacity 500ms ease-in, transform 500ms ease-in;
+				transition-delay: 500ms;
+			}
+		}
 	</style>
 
 </head>
@@ -340,7 +346,7 @@ p {
 						<div class="row justify-content-between mt-5 col-mb-50">
 							<div class="col-lg-6 parallax" data-0="transform: translateY(0px); opacity: 1"
 								data-300="transform: translateY(50px); opacity: 0">
-								<span class="gradient-underline h4">SemiColonWeb 2021</span>
+								<!-- <span class="gradient-underline h4">SemiColonWeb 2021</span> -->
 								<h2 class="fw-bold  mb-0">Welcome to Sharjah Excellence Award
 									Register today and turn your dreams into reality
 									Sharjah Excellence Award introducing the
@@ -376,76 +382,227 @@ p {
 
 			<div class="container">
 				<div class="mx-auto dark text-center" style="max-width: 850px">
-					<span class="display-4 fw-bold gradient-underline">The Sharjah Excellence Award targets
+					<span class="display-4 fw-bold">The Sharjah Excellence Award targets
 						The leading businesses and corporates </span>
 					<p class="lead text-white-50">Start your journey by registering.</p>
 				</div>
 				<div class="clear"></div>
 				<div class="row align-items-stretch mt-3">
-					<div class="col-md-4 mb-3">
-						<article class="card">
-							<img class="card__background" src="https://i.imgur.com/QYWAcXk.jpeg" alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920" height="2193" />
-							<div class="card__content | flow">
-							  <div class="card__content--container | flow">
-								<h2 class="card__title">Regstration</h2>
-								<p class="card__description">
-									Sharjah Entrepreneurs Award
-								</p>
-							  </div>
-							  <button class="card__button">Start</button>
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-3">
+								<article class="card">
+									<!-- <img class="card__background" src="https://i.imgur.com/QYWAcXk.jpeg" alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920" height="2193" /> -->
+									
+									<div class="pending-tm">
+										
+											Which category would you like to participate in?<br>
+											Start your journey by registering
+										
+									</div>
+									<div class="card__content | flow">
+										<div class="card__content--container | flow">
+											<h2 class="card__title">Regstration</h2>
+											<p class="card__description">
+												Sharjah Entrepreneurs Award
+											</p>
+										</div>
+										<button class="card__button">Start</button>
+									</div>
+								</article>
 							</div>
-						  </article>
-					</div>
-					<div class="col-md-4 mb-3">
-						<article class="card">
-							<!-- <img class="card__background" src="https://i.imgur.com/QYWAcXk.jpeg" alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920" height="2193" /> -->
-							<div class="card__content | flow">
-							  <div class="card__content--container | flow">
-								<h2 class="card__title">Regstration</h2>
-								<p class="card__description">
-									Sharjah Entrepreneurs Award
-								</p>
-							  </div>
-							  <button class="card__button">Start</button>
+							<div class="col-md-3">
+								<article class="card">
+									<!-- <img class="card__background" src="https://i.imgur.com/QYWAcXk.jpeg" alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920" height="2193" /> -->
+									
+									<div class="pending-tm">
+										
+											Which category would you like to participate in?<br>
+											Start your journey by registering
+										
+									</div>
+									<div class="card__content | flow">
+										<div class="card__content--container | flow">
+											<h2 class="card__title">Regstration</h2>
+											<p class="card__description">
+												Sharjah Small and Medium Enterprises Award
+											</p>
+										</div>
+										<button class="card__button">Start</button>
+									</div>
+								</article>
 							</div>
-						  </article>
+							<div class="col-md-3">
+								<article class="card">
+									<!-- <img class="card__background" src="https://i.imgur.com/QYWAcXk.jpeg" alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920" height="2193" /> -->
+									
+									<div class="pending-tm">
+										
+											Which category would you like to participate in?<br>
+											Start your journey by registering
+										
+									</div>
+									<div class="card__content | flow">
+										<div class="card__content--container | flow">
+											<h2 class="card__title">Regstration</h2>
+											<p class="card__description">
+												Sharjah Excellence Award
+											</p>
+										</div>
+										<button class="card__button">Start</button>
+									</div>
+								</article>
+							</div>
+							<div class="col-md-3">
+								<article class="card">
+									<!-- <img class="card__background" src="https://i.imgur.com/QYWAcXk.jpeg" alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920" height="2193" /> -->
+									
+									<div class="pending-tm">
+										
+											Which category would you like to participate in?<br>
+											Start your journey by registering
+										
+									</div>
+									<div class="card__content | flow">
+										<div class="card__content--container | flow">
+											<h2 class="card__title">Regstration</h2>
+											<p class="card__description">
+												Sharjah Gulf Excellence Award( This award is by nomination by the Sharjah Excellence Award Board of Trustees )
+											</p>
+										</div>
+										<button class="card__button">Start</button>
+									</div>
+								</article>
+							</div>
+							<div class="col-md-3">
+								<article class="card">
+									<!-- <img class="card__background" src="https://i.imgur.com/QYWAcXk.jpeg" alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920" height="2193" /> -->
+									
+									<div class="pending-tm">
+										
+											Which category would you like to participate in?<br>
+											Start your journey by registering
+										
+									</div>
+									<div class="card__content | flow">
+										<div class="card__content--container | flow">
+											<h2 class="card__title">Regstration</h2>
+											<p class="card__description">
+												Sharjah Gulf Localization Award
+											</p>
+										</div>
+										<button class="card__button">Start</button>
+									</div>
+								</article>
+							</div>
+							<div class="col-md-3">
+								<article class="card">
+									<!-- <img class="card__background" src="https://i.imgur.com/QYWAcXk.jpeg" alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920" height="2193" /> -->
+									
+									<div class="pending-tm">
+										
+											Which category would you like to participate in?<br>
+											Start your journey by registering
+										
+									</div>
+									<div class="card__content | flow">
+										<div class="card__content--container | flow">
+											<h2 class="card__title">Regstration</h2>
+											<p class="card__description">
+												Sharjah Entrepreneurs with Disability Award
+											</p>
+										</div>
+										<button class="card__button">Start</button>
+									</div>
+								</article>
+							</div>
+							<div class="col-md-3">
+								<article class="card">
+									<!-- <img class="card__background" src="https://i.imgur.com/QYWAcXk.jpeg" alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920" height="2193" /> -->
+									
+									<div class="pending-tm">
+										
+											Which category would you like to participate in?<br>
+											Start your journey by registering
+										
+									</div>
+									<div class="card__content | flow">
+										<div class="card__content--container | flow">
+											<h2 class="card__title">Regstration</h2>
+											<p class="card__description">
+												Sharjah Best Security Standards Award
+											</p>
+										</div>
+										<button class="card__button">Start</button>
+									</div>
+								</article>
+							</div>
+							<div class="col-md-3">
+								<article class="card">
+									<!-- <img class="card__background" src="https://i.imgur.com/QYWAcXk.jpeg" alt="Photo of Cartagena's cathedral at the background and some colonial style houses" width="1920" height="2193" /> -->
+									
+									<div class="pending-tm">
+										
+											Which category would you like to participate in?<br>
+											Start your journey by registering
+										
+									</div>
+									<div class="card__content | flow">
+										<div class="card__content--container | flow">
+											<h2 class="card__title">Regstration</h2>
+											<p class="card__description">
+												Sharjah Social Responsibility Award
+											</p>
+										</div>
+										<button class="card__button">Start</button>
+									</div>
+								</article>
+							</div>
+						</div>
 					</div>
-	</div>
-	</div>
 
-	</div><!-- #Related Events end -->
 
-	<!-- Content
+				</div>
+			</div>
+
+		</div><!-- #Related Events end -->
+
+		<!-- Content
 		============================================= -->
-	<section id="content" style="background-color: #000;">
-		<div class="content-wrap pt-0" style="overflow: visible;">
+		<section id="content" style="background-color: #000;">
+			<div class="content-wrap pt-0" style="overflow: visible;">
 
-			<!-- Section About
+				<!-- Section About
 				============================================= -->
-			<div id="section-about" class="section page-section bg-transparent pt-0">
+				<div id="section-about" class="section page-section bg-transparent pt-0">
 
-				<div class="container">
+					<div class="container">
 
-					<div class="mb-5 dark">
-						<span class="display-4 fw-bold gradient-underline font-primary">About Us</span>
-					</div>
+						<div class="mb-5 dark">
+							<span class="display-4 fw-bold gradient-underline font-primary">About Us</span>
+						</div>
 
-					<div class="clear"></div>
+						<div class="clear"></div>
 
-					<div class="row justify-content-around dark">
-						<div class="col-md-6">
-							<h4 class="font-body ls-1 text-uppercase">About shjseen</h4>
-							<p class="text-white-50">The Sharjah Entrepreneurs Award targets the most successful and
-								leading Entrepreneurs in the United Arab Emirates whom had put a footprint in the
-								business world which has a significant impact on their personal and professional life.
-								The Sharjah Entrepreneurs Award is only open to private sector Entrepreneurs in the UAE.
-							</p>
-							<p class="text-white-50">A set of characteristics or traits that distinguish entrepreneurs
-								from others and determine the method of their interaction with the business environment
-								surrounding them and their businesses and affecting their behavior during the
-								development and business management process such as: passion, vision, risk assessment,
-								personal development, self-confidence, hard work, and communication skills</p>
-							<!-- <div class="row mt-5">
+						<div class="row justify-content-around dark">
+							<div class="col-md-6">
+								<h4 class="font-body ls-1 text-uppercase">About shjseen</h4>
+								<p class="text-white-50">The Sharjah Entrepreneurs Award targets the most successful and
+									leading Entrepreneurs in the United Arab Emirates whom had put a footprint in the
+									business world which has a significant impact on their personal and professional
+									life.
+									The Sharjah Entrepreneurs Award is only open to private sector Entrepreneurs in the
+									UAE.
+								</p>
+								<p class="text-white-50">A set of characteristics or traits that distinguish
+									entrepreneurs
+									from others and determine the method of their interaction with the business
+									environment
+									surrounding them and their businesses and affecting their behavior during the
+									development and business management process such as: passion, vision, risk
+									assessment,
+									personal development, self-confidence, hard work, and communication skills</p>
+								<!-- <div class="row mt-5">
 									<div class="col-6 col-sm-3">
 										<div class="counter gradient-text"><span data-from="0" data-to="3" data-refresh-interval="1" data-speed="400"></span></div>
 										<h5 class="font-body">Day Event</h5>
@@ -466,188 +623,188 @@ p {
 										<h5 class="font-body">Participants</h5>
 									</div>
 								</div> -->
-						</div>
+							</div>
 
-						<div class="col-md-5">
-							<div class="about-img position-relative">
-								<div class="my-3 my-lg-0">
-									<div class="gradient-bg"><img src="assets/images/banner2.png" alt="About Image">
+							<div class="col-md-5">
+								<div class="about-img position-relative">
+									<div class="my-3 my-lg-0">
+										<div class="gradient-bg"><img src="assets/images/banner2.png" alt="About Image">
+										</div>
+									</div>
+									<div data-0="top: 160px" data-end="top: 120px">
+										<div class="gradient-bg"><img src="assets/images/banner1.png" alt="About Image">
+										</div>
 									</div>
 								</div>
-								<div data-0="top: 160px" data-end="top: 120px">
-									<div class="gradient-bg"><img src="assets/images/banner1.png" alt="About Image">
-									</div>
-								</div>
 							</div>
 						</div>
+
 					</div>
 
-				</div>
+				</div><!-- #section-about end -->
 
-			</div><!-- #section-about end -->
+				<div class="clear"></div>
 
-			<div class="clear"></div>
-
-			<!-- Section Speakers
+				<!-- Section Speakers
 				============================================= -->
-			<div id="section-speakers" class="section page-section bg-transparent pt-0 mt-6">
-				<div class="container">
-					<div class="mb-5 dark d-flex flex-wrap justify-content-between align-items-center">
-						<span class="display-4 fw-bold gradient-underline mb-0">Board of Trustees Chairman</span>
-						<a href="#" class="button ls-1 text-uppercase fw-semibold button-effect m-0">Show All
-							Members</a>
+				<div id="section-speakers" class="section page-section bg-transparent pt-0 mt-6">
+					<div class="container">
+						<div class="mb-5 dark d-flex flex-wrap justify-content-between align-items-center">
+							<span class="display-4 fw-bold gradient-underline mb-0">Board of Trustees Chairman</span>
+							<a href="#" class="button ls-1 text-uppercase fw-semibold button-effect m-0">Show All
+								Members</a>
+						</div>
+						<div class="row mx-auto dark" style="max-width: 1000px;">
+							<a href="#" class="team col-lg-4 col-sm-6 mb-5">
+								<div class="team-image">
+									<img src="assets/images/chiarman.jpg" alt="John Doe">
+								</div>
+								<div class="team-desc">
+									<div class="team-title">
+										<h4 class="gradient-text">سعادة عبدالله سلطان العويس
+											HE Abdulla Sultan Al Owais
+										</h4><span>رئيس مجلس إدارة غرفة الشارقة
+											Chairman of Sharjah Chamber</span>
+									</div>
+								</div>
+							</a>
+
+							<a href="#" class="team col-lg-4 col-sm-6 mb-5">
+								<div class="team-image">
+									<img src="assets/images/members/mem-1.png" alt="John Doe">
+								</div>
+								<div class="team-desc">
+									<div class="team-title">
+										<h4 class="gradient-text">سعادة عبدالله سلطان العويس
+											HE Abdulla Sultan Al Owais
+										</h4><span>رئيس مجلس إدارة غرفة الشارقة
+											Chairman of Sharjah Chamber</span>
+									</div>
+								</div>
+							</a>
+
+							<a href="#" class="team col-lg-4 col-sm-6 mb-5">
+								<div class="team-image">
+									<img src="assets/images/members/mem_2.png" alt="John Doe">
+								</div>
+								<div class="team-desc">
+									<div class="team-title">
+										<h4 class="gradient-text">سعادة حليمة العويس
+											HE Halima Al Owais
+										</h4><span>رضو مجلس إدارة غرفة الشارقة
+											SCCI Board Member</span>
+									</div>
+								</div>
+							</a>
+
+							<a href="#" class="team col-lg-4 col-sm-6 mb-5">
+								<div class="team-image">
+									<img src="assets/images/members/mem_3.png" alt="John Doe">
+								</div>
+								<div class="team-desc">
+									<div class="team-title">
+										<h4 class="gradient-text">سعادة سعيد غانم السويدي
+											HE Saeed Ghanim Al Suwaidi
+										</h4><span>ر رئيس اللجنة التنفيذية لمجموعة عمل قطاع العقارات
+											Chairman of the Real Estate Committee</span>
+									</div>
+								</div>
+							</a>
+
+							<a href="#" class="team col-lg-4 col-sm-6 mb-5">
+								<div class="team-image">
+									<img src="assets/images/members/mem_4.png" alt="John Doe">
+								</div>
+								<div class="team-desc">
+									<div class="team-title">
+										<h4 class="gradient-text">سعادة خالد جاسم المدفع
+											HE Khaled Al Midfaa
+										</h4><span> رئيس دائرة هيئة الانماء التجاري والسياحي بالشارقة
+											Chairman of Sharjah Commerce & Tourism Dev. Authority</span>
+									</div>
+								</div>
+							</a>
+
+							<a href="#" class="team col-lg-4 col-sm-6 mb-5">
+								<div class="team-image">
+									<img src="assets/images/members/mem_5.png" alt="John Doe">
+								</div>
+								<div class="team-desc">
+									<div class="team-title">
+										<h4 class="gradient-text">س سعادة محمد احمد الشحي
+											HE Mohamed Al Shehhi</h4><span>
+											عضو مجلس إدارة غرفة الشارقة SCCI Board Member</span>
+									</div>
+								</div>
+							</a>
+
+							<a href="#" class="team col-lg-4 col-sm-6 mb-5">
+								<div class="team-image">
+									<img src="assets/images/members/mem_6.png" alt="John Doe">
+								</div>
+								<div class="team-desc">
+									<div class="team-title">
+										<h4 class="gradient-text">س سعادة د. صلاح طاهر الحاج
+											HE Dr. Salah Taher Al haj </h4><span>مساعد مدير جامعة الشارقة لشؤون المجتمع
+											Vice Chancellor for Community Affairs at UOS</span>
+									</div>
+								</div>
+							</a>
+
+							<a href="#" class="team col-lg-4 col-sm-6 mb-5">
+								<div class="team-image">
+									<img src="assets/images/members/mem_7.png" alt="John Doe">
+								</div>
+								<div class="team-desc">
+									<div class="team-title">
+										<h4 class="gradient-text">سعادة وليد عبدالرحمن بو خاطر
+											HE Waleed Bukhatir</h4><span>
+											النائب الثاني لرئيس مجلس إدارة الغرفة
+											Second Vice Chairman of SCCI</span>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="team col-lg-4 col-sm-6 mb-5">
+								<div class="team-image">
+									<img src="assets/images/members/mem_8.png" alt="John Doe">
+								</div>
+								<div class="team-desc">
+									<div class="team-title">
+										<h4 class="gradient-text">
+											سعادة لالو سامويل
+											HE Lalu Samuel
+										</h4><span>
+
+											رئيس اللجنة التمثيلية لمجموعة عمل قطاع الصناعة
+											Chairman of Sharjah Industrial Business Group</span>
+									</div>
+								</div>
+							</a>
+							<a href="#" class="team col-lg-4 col-sm-6 mb-5">
+								<div class="team-image">
+									<img src="assets/images/members/mem_9.png" alt="John Doe">
+								</div>
+								<div class="team-desc">
+									<div class="team-title">
+										<h4 class="gradient-text">
+											سعادة محمد أحمد امين العوضي
+											HE Mohd Ahmed Amen Al Awadh
+
+										</h4><span>مدير عام غرفة تجارة وصناعة الشارقة
+											Director General of SCCI</span>
+									</div>
+								</div>
+							</a>
+
+						</div>
 					</div>
-					<div class="row mx-auto dark" style="max-width: 1000px;">
-						<a href="#" class="team col-lg-4 col-sm-6 mb-5">
-							<div class="team-image">
-								<img src="assets/images/chiarman.jpg" alt="John Doe">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="gradient-text">سعادة عبدالله سلطان العويس
-										HE Abdulla Sultan Al Owais
-									</h4><span>رئيس مجلس إدارة غرفة الشارقة
-										Chairman of Sharjah Chamber</span>
-								</div>
-							</div>
-						</a>
+				</div><!-- #section-speaker end -->
 
-						<a href="#" class="team col-lg-4 col-sm-6 mb-5">
-							<div class="team-image">
-								<img src="assets/images/members/mem-1.png" alt="John Doe">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="gradient-text">سعادة عبدالله سلطان العويس
-										HE Abdulla Sultan Al Owais
-									</h4><span>رئيس مجلس إدارة غرفة الشارقة
-										Chairman of Sharjah Chamber</span>
-								</div>
-							</div>
-						</a>
+				<div class="clear"></div>
 
-						<a href="#" class="team col-lg-4 col-sm-6 mb-5">
-							<div class="team-image">
-								<img src="assets/images/members/mem_2.png" alt="John Doe">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="gradient-text">سعادة حليمة العويس
-										HE Halima Al Owais
-									</h4><span>رضو مجلس إدارة غرفة الشارقة
-										SCCI Board Member</span>
-								</div>
-							</div>
-						</a>
-
-						<a href="#" class="team col-lg-4 col-sm-6 mb-5">
-							<div class="team-image">
-								<img src="assets/images/members/mem_3.png" alt="John Doe">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="gradient-text">سعادة سعيد غانم السويدي
-										HE Saeed Ghanim Al Suwaidi
-									</h4><span>ر رئيس اللجنة التنفيذية لمجموعة عمل قطاع العقارات
-										Chairman of the Real Estate Committee</span>
-								</div>
-							</div>
-						</a>
-
-						<a href="#" class="team col-lg-4 col-sm-6 mb-5">
-							<div class="team-image">
-								<img src="assets/images/members/mem_4.png" alt="John Doe">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="gradient-text">سعادة خالد جاسم المدفع
-										HE Khaled Al Midfaa
-									</h4><span> رئيس دائرة هيئة الانماء التجاري والسياحي بالشارقة
-										Chairman of Sharjah Commerce & Tourism Dev. Authority</span>
-								</div>
-							</div>
-						</a>
-
-						<a href="#" class="team col-lg-4 col-sm-6 mb-5">
-							<div class="team-image">
-								<img src="assets/images/members/mem_5.png" alt="John Doe">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="gradient-text">س سعادة محمد احمد الشحي
-										HE Mohamed Al Shehhi</h4><span>
-										عضو مجلس إدارة غرفة الشارقة SCCI Board Member</span>
-								</div>
-							</div>
-						</a>
-
-						<a href="#" class="team col-lg-4 col-sm-6 mb-5">
-							<div class="team-image">
-								<img src="assets/images/members/mem_6.png" alt="John Doe">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="gradient-text">س سعادة د. صلاح طاهر الحاج
-										HE Dr. Salah Taher Al haj </h4><span>مساعد مدير جامعة الشارقة لشؤون المجتمع
-										Vice Chancellor for Community Affairs at UOS</span>
-								</div>
-							</div>
-						</a>
-
-						<a href="#" class="team col-lg-4 col-sm-6 mb-5">
-							<div class="team-image">
-								<img src="assets/images/members/mem_7.png" alt="John Doe">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="gradient-text">سعادة وليد عبدالرحمن بو خاطر
-										HE Waleed Bukhatir</h4><span>
-										النائب الثاني لرئيس مجلس إدارة الغرفة
-										Second Vice Chairman of SCCI</span>
-								</div>
-							</div>
-						</a>
-						<a href="#" class="team col-lg-4 col-sm-6 mb-5">
-							<div class="team-image">
-								<img src="assets/images/members/mem_8.png" alt="John Doe">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="gradient-text">
-										سعادة لالو سامويل
-										HE Lalu Samuel
-									</h4><span>
-
-										رئيس اللجنة التمثيلية لمجموعة عمل قطاع الصناعة
-										Chairman of Sharjah Industrial Business Group</span>
-								</div>
-							</div>
-						</a>
-						<a href="#" class="team col-lg-4 col-sm-6 mb-5">
-							<div class="team-image">
-								<img src="assets/images/members/mem_9.png" alt="John Doe">
-							</div>
-							<div class="team-desc">
-								<div class="team-title">
-									<h4 class="gradient-text">
-										سعادة محمد أحمد امين العوضي
-										HE Mohd Ahmed Amen Al Awadh
-
-									</h4><span>مدير عام غرفة تجارة وصناعة الشارقة
-										Director General of SCCI</span>
-								</div>
-							</div>
-						</a>
-
-					</div>
-				</div>
-			</div><!-- #section-speaker end -->
-
-			<div class="clear"></div>
-
-			<!-- Section Tickets
+				<!-- Section Tickets
 				============================================= -->
-			<!-- <div id="section-tickets" class="section page-section bg-transparent pt-0">
+				<!-- <div id="section-tickets" class="section page-section bg-transparent pt-0">
 				<div class="container">
 					<div class="mb-5 dark d-flex justify-content-between align-items-center">
 						<span class="display-4 fw-bold gradient-underline mb-0">Tickets</span>
@@ -801,130 +958,130 @@ p {
 				</div>
 			</div> #section-tickets end -->
 
-			<div class="clear"></div>
+				<div class="clear"></div>
 
 
-			<div class="clear"></div>
+				<div class="clear"></div>
 
 
 
-		</div>
-	</section><!-- #content end -->
-
-	<!-- Footer
-		============================================= -->
-	<footer id="footer" class="dark"
-		style="background: linear-gradient(to bottom, rgba(255,255,255,.1), rgba(255,255,255,.03)); border-top-color: #222">
-		<div class="container">
-
-			<!-- Footer Widgets
-				============================================= -->
-			<div class="footer-widgets-wrap">
-				<div class="row">
-
-					<div class="col-lg-4">
-
-						<div class="widget">
-							<div class="row">
-								<div class="col-lg-8 mb-4" style="color:#888;">
-									<img src="demos/app-landing/images/logo-dark@2x.png" alt="Canvas Logo"
-										class="d-block" height="100">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, consequatur
-										facere molestiae iusto atque.</p>
-
-									<a href="#" class="social-icon si-small border-0 rounded-circle bg-facebook">
-										<i class="fa-brands fa-facebook-f"></i>
-										<i class="fa-brands fa-facebook-f"></i>
-									</a>
-
-									<a href="#" class="social-icon si-small border-0 rounded-circle bg-twitter">
-										<i class="fa-brands fa-twitter"></i>
-										<i class="fa-brands fa-twitter"></i>
-									</a>
-
-									<a href="#" class="social-icon si-small border-0 rounded-circle bg-google">
-										<i class="fa-brands fa-google"></i>
-										<i class="fa-brands fa-google"></i>
-									</a>
-
-									<a href="#" class="social-icon si-small border-0 rounded-circle bg-pinterest">
-										<i class="fa-brands fa-pinterest-p"></i>
-										<i class="fa-brands fa-pinterest-p"></i>
-									</a>
-
-									<a href="#" class="social-icon si-small border-0 rounded-circle bg-vimeo">
-										<i class="fa-brands fa-vimeo-v"></i>
-										<i class="fa-brands fa-vimeo-v"></i>
-									</a>
-
-								</div>
-							</div>
-						</div>
-
-					</div>
-
-					<div class="col-lg-8">
-						<div class="row g-4">
-
-							<div class="col-lg-3">
-								<div class="widget widget_links app_landing_widget_link">
-									<ul class="pt-3">
-										<li><a href="">Visiting Place</a></li>
-										<li><a href="">Nearby Hotels</a></li>
-										<li><a href="">Public Transports</a></li>
-										<li><a href="">Weather Info</a></li>
-										<li><a href="">Food Cost</a></li>
-										<li><a href="">Accommodation </a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-3">
-								<div class="widget widget_links app_landing_widget_link">
-									<ul class="pt-3">
-										<li><a href="">Code Of Conduct</a></li>
-										<li><a href="">Speakers</a></li>
-										<li><a href="">Sponsors</a></li>
-										<li><a href="">FAQs</a></li>
-										<li><a href="">Volunteers</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div id="twitter" class="widget widget-twitter-feed pt-3">
-
-									<ul class="iconlist twitter-feed" data-username="envato" data-count="2"
-										style="--cnvs-iconlist-color:#EC008B;"></ul>
-
-									<div class="d-flex justify-content-end">
-										<a href="#"
-											class="button ls-1 text-uppercase fw-semibold button-gradient text-white">Follow
-											Us on Twitter</a>
-									</div>
-
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-				</div>
 			</div>
+		</section><!-- #content end -->
 
-		</div>
-
-		<!-- Copyrights
-			============================================= -->
-		<div id="copyrights" class="bg-transparent pt-0">
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark"
+			style="background: linear-gradient(to bottom, rgba(255,255,255,.1), rgba(255,255,255,.03)); border-top-color: #222">
 			<div class="container">
 
-				<div class="w-100 text-center text-md-start">
-					Copyrights &copy; 2023 All Rights Reserved by Canvas Inc.<br>
-					<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap">
+					<div class="row">
+
+						<div class="col-lg-4">
+
+							<div class="widget">
+								<div class="row">
+									<div class="col-lg-8 mb-4" style="color:#888;">
+										<img src="demos/app-landing/images/logo-dark@2x.png" alt="Canvas Logo"
+											class="d-block" height="100">
+										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, consequatur
+											facere molestiae iusto atque.</p>
+
+										<a href="#" class="social-icon si-small border-0 rounded-circle bg-facebook">
+											<i class="fa-brands fa-facebook-f"></i>
+											<i class="fa-brands fa-facebook-f"></i>
+										</a>
+
+										<a href="#" class="social-icon si-small border-0 rounded-circle bg-twitter">
+											<i class="fa-brands fa-twitter"></i>
+											<i class="fa-brands fa-twitter"></i>
+										</a>
+
+										<a href="#" class="social-icon si-small border-0 rounded-circle bg-google">
+											<i class="fa-brands fa-google"></i>
+											<i class="fa-brands fa-google"></i>
+										</a>
+
+										<a href="#" class="social-icon si-small border-0 rounded-circle bg-pinterest">
+											<i class="fa-brands fa-pinterest-p"></i>
+											<i class="fa-brands fa-pinterest-p"></i>
+										</a>
+
+										<a href="#" class="social-icon si-small border-0 rounded-circle bg-vimeo">
+											<i class="fa-brands fa-vimeo-v"></i>
+											<i class="fa-brands fa-vimeo-v"></i>
+										</a>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-lg-8">
+							<div class="row g-4">
+
+								<div class="col-lg-3">
+									<div class="widget widget_links app_landing_widget_link">
+										<ul class="pt-3">
+											<li><a href="">Visiting Place</a></li>
+											<li><a href="">Nearby Hotels</a></li>
+											<li><a href="">Public Transports</a></li>
+											<li><a href="">Weather Info</a></li>
+											<li><a href="">Food Cost</a></li>
+											<li><a href="">Accommodation </a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-lg-3">
+									<div class="widget widget_links app_landing_widget_link">
+										<ul class="pt-3">
+											<li><a href="">Code Of Conduct</a></li>
+											<li><a href="">Speakers</a></li>
+											<li><a href="">Sponsors</a></li>
+											<li><a href="">FAQs</a></li>
+											<li><a href="">Volunteers</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div id="twitter" class="widget widget-twitter-feed pt-3">
+
+										<ul class="iconlist twitter-feed" data-username="envato" data-count="2"
+											style="--cnvs-iconlist-color:#EC008B;"></ul>
+
+										<div class="d-flex justify-content-end">
+											<a href="#"
+												class="button ls-1 text-uppercase fw-semibold button-gradient text-white">Follow
+												Us on Twitter</a>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+					</div>
 				</div>
 
 			</div>
-		</div><!-- #copyrights end -->
-	</footer><!-- #footer end -->
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights" class="bg-transparent pt-0">
+				<div class="container">
+
+					<div class="w-100 text-center text-md-start">
+						Copyrights &copy; 2023 All Rights Reserved by Canvas Inc.<br>
+						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+					</div>
+
+				</div>
+			</div><!-- #copyrights end -->
+		</footer><!-- #footer end -->
 
 	</div><!-- #wrapper end -->
 

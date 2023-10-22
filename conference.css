@@ -5,9 +5,10 @@
 :root {
 	--cnvs-themecolor: #222222;
 	--cnvs-themecolor-rgb: 34, 34, 34;
-	--cnvs-color1: #EC008B;
-	--cnvs-color2: #F3317A;
-	--cnvs-color3: #FB6567;
+	--cnvs-color1: #EACD02;
+	--cnvs-color2: #fcda00ab;
+	--cnvs-color3: #FCDC00;
+
 
 	--cnvs-body-font: 'Roboto', sans-serif;
 	--cnvs-primary-font: 'PT Serif', serif;
