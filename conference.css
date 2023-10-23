@@ -34,7 +34,23 @@ body,
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
-
+::-moz-selection {
+	background: #fff;
+	color: #EACD02;;
+	text-shadow: none;
+  }
+  
+  ::selection {
+	background: #fff;
+	color: #EACD02;;
+	text-shadow: none;
+  }
+  
+  ::-moz-selection {
+	background: #fff;
+	color: #EACD02;;
+	text-shadow: none;
+  }
 .gradient-underline {
 	font-family: var(--cnvs-primary-font);
 	background-image: -webkit-linear-gradient( 280deg, var(--cnvs-color1) 12.08%, var(--cnvs-color2) 53.53%, var(--cnvs-color3) 95.62% );
