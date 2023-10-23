@@ -160,7 +160,7 @@
       <div class="options-area">
   
       </div>
-      <button class="submit-button">Submit Answer</button>
+      <button class="submit-button">Next</button>
       <div class="bullets">
         <div class="spans"></div>
         <div class="countdown"></div>
@@ -223,7 +223,7 @@ function getQuestions() {
     }
   };
 
-  myRequest.open("GET", "https://mohamedkhalifa11.github.io/Qweb/webDevlopement_questions.json", true)
+  myRequest.open("GET", "http://13.127.19.164/questions", true)
   myRequest.send()
 }
 
@@ -366,5 +366,30 @@ function countdown(duration, count) {
     }, 1000)
   }
 }
+
+// Make a GET request to the URL
+fetch('http://13.127.19.164/questions')
+  .then(response => response.json()) // Parse the response as JSON
+  .then(data => {
+    // Access the questions array
+    const questions = data[0].questions;
+
+    // Iterate through the questions
+    questions.forEach(question => {
+      // Access question ID and question text
+      const questionID = question.id;
+      const questionText = question.question;
+
+      // Access options array
+      const options = question.options;
+
+      // Display the question and options
+      console.log(`Question ID: ${questionID}`);
+      console.log(`Question: ${questionText}`);
+      console.log(`Options: ${options.join(', ')}`);
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+  fetch()
     </script>
   </body>
