@@ -16501,7 +16501,8 @@ body:not(.is-expanded-menu) #header:not([data-mobile-sticky=true]) .header-wrap-
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--cnvs-header-sticky-bg);
+  background-color: white !important;
+  color: black !important;
 }
 .is-expanded-menu .sticky-header.semi-transparent {
   --cnvs-header-sticky-bg: rgba(var(--cnvs-invert-contrast-rgb),0.7);
@@ -16533,6 +16534,7 @@ body:not(.is-expanded-menu) #header:not([data-mobile-sticky=true]) .header-wrap-
   margin: 0 0.5rem 0 0;
   font-size: 0.875rem;
   line-height: 22px;
+  color: black !important;
 }
 .is-expanded-menu .sticky-header-shrink .sub-title .menu-container > .menu-item > .menu-link {
   --cnvs-primary-menu-padding-y: 18px;

@@ -3,393 +3,83 @@
   font-family: Arial, sans-serif;
   box-sizing: border-box;
 }
-
-.quiz-app {
-  background-color: #fff;
-  border: 10px solid #f6f6f6;
-  margin: 20px auto;
-  width: 800px;
-  padding: 15px;
-  border-radius: 20px;
-}
-
-.quiz-app .quiz-info {
-  display: flex;
-  padding: 20px;
-  background-color: #f6f6f6;
-  border-radius: 20px;
-}
-
-.quiz-app .quiz-info .category {
-  flex: 1;
-}
-
-.quiz-app .quiz-info .count {
-  flex: 1;
-  text-align: right;
-}
-
-.quiz-app .quiz-area {
-  background-color: #fff;
-  padding: 20px;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  border-radius: 20px;
-}
-
-.quiz-app .quiz-area h2 {
-  margin: 0;
-}
-
-.quiz-app .options-area {
-  background-color: #fff;
-  padding: 0 20px;
-  /* border-radius: 20px; */
-}
-
-.quiz-app .options-area .option {
-  background-color: #f6f6f6;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 20px;
-}
-
-.quiz-app .options-area .option:hover {
-  background-color: #f0f0f0;
-}
-
-/* .quiz-app .options-area .option:not(:last-child) {
-  border-bottom: 1px solid #dfdfdf;
-} */
-
-.quiz-app .options-area .option input[type="Radio"]:checked + label {
-  color: #0055ff;
-}
-
-.quiz-app .options-area .option label {
-  cursor: pointer;
-  color: #444;
-  font-weight: bold;
-  margin-left: 5px;
-  position: relative;
-  top: -2px;
-}
-
-.quiz-app .submit-button {
-  background-color: #0055ff;
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  padding: 15px;
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  border-radius: 20px;
-  margin: 20px auto;
-}
-
-.quiz-app .submit-button:hover {
-  background-color: #003d80;
-}
-
-.quiz-app .submit-button:focus {
-  outline: none;
-}
-
-.quiz-app .bullets {
-  background-color: #f6f6f6;
-  display: flex;
-  padding: 20px;
-  margin-bottom: 10px;
-  border-radius: 20px;
-}
-
-.quiz-app .bullets .spans {
-  flex: 1;
-  display: flex;
-}
-
-.quiz-app .bullets .spans span {
-  width: 20px;
-  height: 20px;
-  background-color: #fff;
-  margin-right: 10px;
-  border-radius: 50%;
-}
-
-.quiz-app .bullets .spans span.on {
-  background-color: #0055ff;
-}
-
-.quiz-app .results {
+.question-container{
   text-align: center;
-  font-size: 24px;
+ 
 }
-
-.quiz-app .results span {
-  font-weight: bold;
-}
-
-.quiz-app .results span.perfect {
-  color: #ffd700;
-}
-
-.quiz-app .results span.good {
-  color: #2ecc71;
-}
-
-.quiz-app .results span.fair {
-  color: #b3b0ad;
-}
-
-.quiz-app .results span.bad {
-  color: #c0392b;
-}
-
+p{
+    font-size: 25px;
+  }
+  .next-button{
+    text-align: center;
+  }
 </style>
 <body>
-    <div class="quiz-app">
-      <div class="quiz-info">
-        <div class="category">Category: <span></span></div>
-        <div class="count"> <span></span></div>
-      </div>
-      <div class="quiz-area">
-  
-      </div>
-      <div class="options-area">
-  
-      </div>
-      <button class="submit-button">Next</button>
-      <div class="bullets">
-        <div class="spans"></div>
-        <div class="countdown"></div>
-      </div>
-      <div class="results">
-  
-      </div>
-    </div>
-    <script>
-        // Query selectors
-let quizInfo = document.querySelector(".quiz-info")
-let countSpan = document.querySelector(".count span")
-let bullets = document.querySelector(".bullets")
-let categorySpan = document.querySelector(".category span")
-let bulletsSpanContainer = document.querySelector(".bullets .spans")
-let quizArea = document.querySelector(".quiz-area")
-let optionsArea = document.querySelector(".options-area")
-let submitButton = document.querySelector(".submit-button")
-let countdownDiv = document.querySelector(".countdown")
-let resultsDiv = document.querySelector(".results")
+  <div id="quiz-container"></div>
+  <button id="next-button">Next</button>
+  <script>
+     let currentQuestionIndex = 0;
 
-// Variables
-let currentIndex = 0
-let rigthAnswers = 0
-let countdownInterval = 0
-
-//Functions to get the questions from JSON File
-function getQuestions() {
-  let myRequest = new XMLHttpRequest()
-
-  myRequest.onreadystatechange = function () {
-    if (this.readyState === 4 && this.status === 200) {
-      let questionsObject = JSON.parse(this.responseText)
-      let questionsCount = questionsObject.questions.length
-
-      createBullets(questionsCount)
-
-      categoryName(questionsObject.questions[currentIndex].category, questionsCount)
-
-      addQuestionData(questionsObject.questions[currentIndex], questionsCount)
-
-      countdown(600, questionsCount)
-
-      submitButton.onclick = () => {
-        let theRightAnswer = questionsObject.questions[currentIndex].right_answer
-        currentIndex++
-
-        checkAnswer(theRightAnswer, questionsCount)
-
-        quizArea.innerHTML = ""
-        optionsArea.innerHTML = ""
-
-        addQuestionData(questionsObject.questions[currentIndex], questionsCount)
-
-        handleBullets()
-
-        showResults(questionsCount)
-
-      }
-    }
-  };
-
-  myRequest.open("GET", "http://13.127.19.164/questions", true)
-  myRequest.send()
+async function fetchQuestions() {
+    const response = await fetch('https://models.nuwatt.tech:8890/questions');
+    const data = await response.json();
+    return data[0].questions;
 }
 
-getQuestions(); // To call getQuestions function
+async function renderQuestion(question) {
+    const questionContainer = document.createElement('div');
+    questionContainer.classList.add('question-container');
 
-// Make circles to know which question you are now in the quiz
-function createBullets(num) {
-  countSpan.innerHTML = num
+    const questionElement = document.createElement('p');
+    questionElement.textContent = question.question;
+    questionContainer.appendChild(questionElement);
 
-  for (let i = 0; i < num; i++) {
-    let theBullet = document.createElement("span");
+    const optionsContainer = document.createElement('div');
+    question.options.forEach((option, index) => {
+        const optionElement = document.createElement('input');
+        optionElement.type = 'radio';
+        optionElement.name = `question-${question.id}`;
+        optionElement.value = option;
+        optionElement.id = `question-${question.id}-option-${index}`;
 
-    if (i === 0) {
-      theBullet.className = "on"
-    }
+        const labelElement = document.createElement('label');
+        labelElement.textContent = option;
+        labelElement.setAttribute('for', `question-${question.id}-option-${index}`);
 
-    bulletsSpanContainer.appendChild(theBullet)
-  }
-}
-
-// To add category name from JSON File
-function categoryName(category) {
-  categorySpan.innerHTML = category
-}
-
-// Function addQuestionData to add questions and options into the web app
-function addQuestionData(obj, count) {
-  if (currentIndex < count) {
-    let questionTitle = document.createElement("h2")
-    let questionText = document.createTextNode(obj.question)
-
-    questionTitle.appendChild(questionText)
-    quizArea.appendChild(questionTitle)
-
-    for (let i = 0; i < 4; i++) {
-      let mainDiv = document.createElement("div")
-      mainDiv.className = "option"
-
-      let radioInput = document.createElement("input")
-      radioInput.name = "options"
-      radioInput.type = "radio"
-      radioInput.id = `option_${i}`
-      radioInput.dataset.option = obj.options[i]
-
-      theLabel = document.createElement("label")
-      theLabel.htmlFor = `option_${i}`
-
-      theLabelText = document.createTextNode(obj.options[i])
-
-      theLabel.appendChild(theLabelText)
-      mainDiv.appendChild(radioInput)
-      mainDiv.appendChild(theLabel)
-      optionsArea.appendChild(mainDiv)
-    }
-    categoryName(obj.category) // Call categoryName Function
-  }
-}
-// To check the answers from the user
-function checkAnswer(rAnswer, count) {
-  let options = document.getElementsByName("options")
-  let choosenAnswer;
-
-  for (let i = 0; i < options.length; i++) {
-    if (options[i].checked) {
-      choosenAnswer = options[i].dataset.option
-    }
-  }
-  if (rAnswer === choosenAnswer) {
-    rigthAnswers++;
-  }
-}
-// To color the circle to show you the number of the quiz question
-function handleBullets() {
-  let bulletsSpans = document.querySelectorAll(".bullets .spans span")
-  let arrayOfSpans = Array.from(bulletsSpans)
-  arrayOfSpans.forEach((span, index) => {
-    if (currentIndex === index) {
-      span.className = "on"
-    }
-  })
-}
-
-/*
-  This function used after the quiz is finished 
-  It Delete all quiz content and show the user result
-*/
-function showResults(count) {
-  let theResults;
-  if (currentIndex === count) {
-    quizArea.remove()
-    optionsArea.remove()
-    submitButton.remove()
-    bullets.remove()
-    quizInfo.remove()
-
-    if (rigthAnswers === count) {
-      theResults = `<span class="perfect">Perfect</span>, All answers are correct ${rigthAnswers} from ${count}`
-    }
-    else if (rigthAnswers < count && rigthAnswers > count / 2) {
-      theResults = `<span class="good">Good</span>, ${rigthAnswers} from ${count} are correct`
-    }
-    else if (rigthAnswers === count / 2) {
-      theResults = `<span class="fair">Fair</span>, Just half of answers are correct ${rigthAnswers} from ${count} is Right`
-    }
-    else {
-      theResults = `<span class="bad">Bad Result</span>, ${rigthAnswers} from ${count} are correct`
-    }
-
-    resultsDiv.innerHTML = theResults
-  }
-}
-
-function countdown(duration, count) {
-  if (currentIndex < count) {
-    let minutes, seconds
-    countdownInterval = setInterval(() => {
-      minutes = parseInt(duration / 60)
-      seconds = parseInt(duration % 60)
-
-      minutes = minutes < 10 ? `0${minutes}` : minutes
-      seconds = seconds < 10 ? `0${seconds}` : seconds
-
-      countdownDiv.style.fontWeight = 'bold'
-
-      if (duration < 60) {
-        countdownDiv.style.color = 'red';
-      }
-
-      countdownDiv.innerHTML = `${minutes}:${seconds}`
-
-      if (--duration < 0) {
-        clearInterval(countdownInterval)
-        // showResults(count)
-        for (let i = 0; i < count - currentIndex + i; i++) {
-          console.log(`Count: ${count}`)
-          console.log(`current Index: ${currentIndex}`)
-          submitButton.click();
-        }
-      }
-    }, 1000)
-  }
-}
-
-// Make a GET request to the URL
-fetch('http://13.127.19.164/questions')
-  .then(response => response.json()) // Parse the response as JSON
-  .then(data => {
-    // Access the questions array
-    const questions = data[0].questions;
-
-    // Iterate through the questions
-    questions.forEach(question => {
-      // Access question ID and question text
-      const questionID = question.id;
-      const questionText = question.question;
-
-      // Access options array
-      const options = question.options;
-
-      // Display the question and options
-      console.log(`Question ID: ${questionID}`);
-      console.log(`Question: ${questionText}`);
-      console.log(`Options: ${options.join(', ')}`);
+        optionsContainer.appendChild(optionElement);
+        optionsContainer.appendChild(labelElement);
+        optionsContainer.appendChild(document.createElement('br'));
     });
-  })
-  .catch(error => console.error('Error fetching data:', error));
-  fetch()
-    </script>
+
+    questionContainer.appendChild(optionsContainer);
+
+    return questionContainer;
+}
+
+async function renderQuestions() {
+    const questions = await fetchQuestions();
+    const quizContainer = document.getElementById('quiz-container');
+    const nextButton = document.getElementById('next-button');
+
+    async function showNextQuestion() {
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            const question = questions[currentQuestionIndex];
+            const questionElement = await renderQuestion(question);
+            quizContainer.innerHTML = '';
+            quizContainer.appendChild(questionElement);
+        } else {
+            alert('You have completed the quiz!');
+        }
+    }
+
+    nextButton.addEventListener('click', showNextQuestion);
+
+    const firstQuestion = await renderQuestion(questions[currentQuestionIndex]);
+    quizContainer.appendChild(firstQuestion);
+}
+
+renderQuestions();
+</script>
+  </script>
   </body>
