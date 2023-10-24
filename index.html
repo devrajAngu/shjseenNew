@@ -26,10 +26,17 @@
 
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="css/custom.css">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Document Title
@@ -39,7 +46,8 @@
 		.logo-new {
 			background: white;
 		}
-		body{
+
+		body {
 			overflow-x: hidden;
 		}
 
@@ -264,10 +272,12 @@
 			padding: 60px 0;
 			height: 300px;
 		}
-		.header-chir{
+
+		.header-chir {
 			padding-bottom: 2rem;
-    		text-align: center;
+			text-align: center;
 		}
+
 		.team-desc {
 			position: absolute;
 			left: 0;
@@ -279,15 +289,64 @@
 			padding-left: 1rem !important;
 			padding-right: 1rem !important;
 		}
+
 		.menu-link {
 			color: #000 !important;
 		}
-		.text-caro{
+
+		.text-caro {
 			font-size: 27px;
 		}
-		.text-caro-1{
-			font-size: 3rem; 
+
+		.text-caro-1 {
+			font-size: 3rem;
 			font-weight: bold;
+		}
+
+		@media only screen and (max-width: 720px) {
+			.last-add {
+				font-size: 20px;
+			}
+
+			.last-add-2 {
+				font-size: 15px;
+			}
+
+			.logo-new {
+				height: 50px !important;
+			}
+
+			.menu-link {
+				color: white !important;
+			}
+
+			.section-reg-text {
+				font-size: 20px !important;
+				position: relative;
+				bottom: 1rem;
+			}
+
+			.bordof-chir {
+				font-size: 28px !important;
+				padding-bottom: 1rem;
+			}
+
+			.foot-icon {
+				padding-bottom: 1rem !important;
+			}
+
+			.bord-all {
+				position: relative;
+				left: 4rem !important;
+				top: 1rem !important;
+			}
+			.regi-card{
+				margin: 10% !important;
+			}
+		}
+
+		.section-reg-text {
+			font-size: 2.5rem;
 		}
 	</style>
 
@@ -332,16 +391,13 @@
 
 							<ul class="menu-container one-page-menu" data-easing="easeInOutExpo" data-speed="1250"
 								data-offset="160" style="color: #000;">
-								<li class="menu-item"><a class="menu-link ls-1 " href="#"
-										data-href="#section-about">
+								<li class="menu-item"><a class="menu-link ls-1 " href="#" data-href="#section-about">
 										<div>About Us</div>
 									</a></li>
-								<li class="menu-item"><a class="menu-link ls-1 " href="#"
-										>
+								<li class="menu-item"><a class="menu-link ls-1 " href="#">
 										<div>Award Categories</div>
 									</a></li>
-								<li class="menu-item"><a class="menu-link ls-1 " href="#"
-										data-href="#section-speakers">
+								<li class="menu-item"><a class="menu-link ls-1 " href="#" data-href="#section-speakers">
 										<div>Contact Us</div>
 									</a></li>
 								<!-- <li class="menu-item"><a class="menu-link ls-1 text-uppercase" href="#"
@@ -385,102 +441,102 @@
 		============================================= -->
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 			<ol class="carousel-indicators">
-			  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-			  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 			</ol>
 			<div class="carousel-inner">
-			  <div class="carousel-item active">
-				<img class="d-block w-100" src="assets/images/banner3.png" alt="First slide">
-				<div class="carousel-caption d-none d-md-block">
-					<div class="col-sm-12">
-						<div class="row">
-							<div class="col-sm-6">
-							<div class="slider-uper" style="margin: 0rem;
+				<div class="carousel-item active">
+					<img class="d-block w-100" src="assets/images/banner3.png" alt="First slide">
+					<div class="carousel-caption d-none d-md-block">
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="slider-uper" style="margin: 0rem;
 							position: relative;
 							bottom: 14rem !important;">
-								<h5 class="text-caro-1">Welcome to Sharjah Excellence Award</h5>
-								<p class="text-caro">Register today and turn your dreams into reality
-								</p>
-								<div>
-									<a href="#section-tickets"
-													class="button button-them ls-1 text-uppercase fw-semibold m-0"
-													data-class="down-lg:px-1" data-scrollto="#section-tickets">Register</a>
-													<a href="#section-tickets"
-													class="button button-them ls-1 text-uppercase fw-semibold m-0"
-													data-class="down-lg:px-1" data-scrollto="#section-tickets">Download</a>
+										<h5 class="text-caro-1">Welcome to Sharjah Excellence Award</h5>
+										<p class="text-caro">Register today and turn your dreams into reality
+										</p>
+										<div>
+											<a href="#section-tickets"
+												class="button button-them ls-1 text-uppercase fw-semibold m-0"
+												data-class="down-lg:px-1" data-scrollto="#section-tickets">Register</a>
+											<a href="#section-tickets"
+												class="button button-them ls-1 text-uppercase fw-semibold m-0"
+												data-class="down-lg:px-1" data-scrollto="#section-tickets">Download</a>
+										</div>
+									</div>
 								</div>
+								<div class="col-sm-6"></div>
 							</div>
-							</div>
-							<div class="col-sm-6"></div>
 						</div>
 					</div>
-				  </div>
-			  </div>
-			  <div class="carousel-item">
-				<img class="d-block w-100" src="assets/images/banner2.png" alt="Second slide">
-				<div class="carousel-caption d-none d-md-block">
-					<div class="col-sm-12">
-						<div class="row">
-							<div class="col-sm-6">
-							<div class="slider-uper" style="margin: 0rem;
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="assets/images/banner2.png" alt="Second slide">
+					<div class="carousel-caption d-none d-md-block">
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="slider-uper" style="margin: 0rem;
 							position: relative;
 							bottom: 14rem !important;">
-								<h5 class="text-caro-1">Welcome to Sharjah Excellence Award</h5>
-								<p class="text-caro">Register today and turn your dreams into reality
-								</p>
-								<div>
-									<a href="#section-tickets"
-													class="button button-them ls-1 text-uppercase fw-semibold m-0"
-													data-class="down-lg:px-1" data-scrollto="#section-tickets">Register</a>
-													<a href="#section-tickets"
-													class="button button-them ls-1 text-uppercase fw-semibold m-0"
-													data-class="down-lg:px-1" data-scrollto="#section-tickets">Download</a>
+										<h5 class="text-caro-1">Welcome to Sharjah Excellence Award</h5>
+										<p class="text-caro">Register today and turn your dreams into reality
+										</p>
+										<div>
+											<a href="#section-tickets"
+												class="button button-them ls-1 text-uppercase fw-semibold m-0"
+												data-class="down-lg:px-1" data-scrollto="#section-tickets">Register</a>
+											<a href="#section-tickets"
+												class="button button-them ls-1 text-uppercase fw-semibold m-0"
+												data-class="down-lg:px-1" data-scrollto="#section-tickets">Download</a>
+										</div>
+									</div>
 								</div>
+								<div class="col-sm-6"></div>
 							</div>
-							</div>
-							<div class="col-sm-6"></div>
 						</div>
 					</div>
-				  </div>
-			  </div>
-			  <div class="carousel-item">
-				<img class="d-block w-100" src="assets/images/banner1.png" alt="Third slide">
-				<div class="carousel-caption d-none d-md-block">
-					<div class="col-sm-12">
-						<div class="row">
-							<div class="col-sm-6">
-							<div class="slider-uper" style="margin: 0rem;
+				</div>
+				<div class="carousel-item">
+					<img class="d-block w-100" src="assets/images/banner1.png" alt="Third slide">
+					<div class="carousel-caption d-none d-md-block">
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="slider-uper" style="margin: 0rem;
 							position: relative;
 							bottom: 14rem !important;">
-								<h5 class="text-caro-1">Welcome to Sharjah Excellence Award</h5>
-								<p class="text-caro">Register today and turn your dreams into reality
-								</p>
-								<div>
-									<a href="#section-tickets"
-													class="button button-them ls-1 text-uppercase fw-semibold m-0"
-													data-class="down-lg:px-1" data-scrollto="#section-tickets">Register</a>
-													<a href="#section-tickets"
-													class="button button-them ls-1 text-uppercase fw-semibold m-0"
-													data-class="down-lg:px-1" data-scrollto="#section-tickets">Download</a>
+										<h5 class="text-caro-1">Welcome to Sharjah Excellence Award</h5>
+										<p class="text-caro">Register today and turn your dreams into reality
+										</p>
+										<div>
+											<a href="#section-tickets"
+												class="button button-them ls-1 text-uppercase fw-semibold m-0"
+												data-class="down-lg:px-1" data-scrollto="#section-tickets">Register</a>
+											<a href="#section-tickets"
+												class="button button-them ls-1 text-uppercase fw-semibold m-0"
+												data-class="down-lg:px-1" data-scrollto="#section-tickets">Download</a>
+										</div>
+									</div>
 								</div>
+								<div class="col-sm-6"></div>
 							</div>
-							</div>
-							<div class="col-sm-6"></div>
 						</div>
 					</div>
-				  </div>
-			  </div>
+				</div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			  <span class="sr-only">Previous</span>
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
 			</a>
 			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			  <span class="sr-only">Next</span>
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
 			</a>
-		  </div>
+		</div>
 
 		<!-- #Slider end -->
 
@@ -492,12 +548,12 @@
 
 			<div class="container">
 				<div class="mx-auto dark text-center" style="max-width: 850px">
-					<span class="fw-bold" style="font-size: 2.5rem;">The Sharjah Excellence Award targets
+					<span class="fw-bold section-reg-text">The Sharjah Excellence Award targets
 						The leading businesses and corporates </span>
 					<p class="lead text-white-50">Start your journey by registering.</p>
 				</div>
 				<div class="clear"></div>
-				<div class="row align-items-stretch mt-3">
+				<div class="row align-items-stretch mt-3 regi-card">
 					<div class="col-md-12">
 						<div class="row">
 							<div class="col-md-3">
@@ -690,7 +746,8 @@
 						<div class="row justify-content-around dark">
 							<div class="col-md-6">
 								<h4 class="font-body ls-1 text-uppercase">About shjseen</h4>
-								<p class="text-white-100">The Sharjah Entrepreneurs Award targets the most successful and
+								<p class="text-white-100">The Sharjah Entrepreneurs Award targets the most successful
+									and
 									leading Entrepreneurs in the United Arab Emirates whom had put a footprint in the
 									business world which has a significant impact on their personal and professional
 									life.
@@ -753,8 +810,10 @@
 				<div id="section-speakers" class="section page-section bg-transparent pt-0 mt-6">
 					<div class="container">
 						<div class="mb-5 dark d-flex flex-wrap justify-content-between align-items-center">
-							<span class="display-4 fw-bold gradient-underline mb-0">Board of Trustees Chairman</span>
-							<a href="#" class="button ls-1 text-uppercase fw-semibold button-effect m-0">Show All
+							<span class="display-4 fw-bold gradient-underline mb-0 bordof-chir">Board of Trustees
+								Chairman</span>
+							<a href="#" class="button ls-1 text-uppercase fw-semibold button-effect m-0 bord-all">Show
+								All
 								Members</a>
 						</div>
 						<div class="row mx-auto dark" style="max-width: 1000px;">
@@ -937,11 +996,12 @@
 								</div>
 							</div>
 						</div>
-		
+
 					</a>
 					<div class="col-md-8">
 						<div class="chiar">
-							<h4 style="color: #eacd02;padding: 4rem;font-size: 26px;">Sharjah Excellence Award seeks to strengthen the position of Sharjah as an aspirational place to work and invest.</h4>
+							<h4 style="color: #eacd02;padding: 4rem;font-size: 26px;">Sharjah Excellence Award seeks to
+								strengthen the position of Sharjah as an aspirational place to work and invest.</h4>
 							<h5 style="    font-size: 20px;
 							color: #eacd02;
 							padding: 4rem;
@@ -953,11 +1013,12 @@
 			</div>
 		</div>
 		<div class="section-2">
-			<div style="padding: 4rem; text-align: center;">
-				<h2>Sharjah Excellence Award
+			<div style="padding: 4rem; text-align: center;" class="last-section">
+				<h2 class="last-add">Sharjah Excellence Award
 					is your window to excellence.</h2>
 				<div>
-					<h3 style="color: #fff400 !important;">Are you ready to register for Sharjah Excellence Award Cycle
+					<h3 style="color: #fff400 !important;" class="last-add-2">Are you ready to register for Sharjah
+						Excellence Award Cycle
 						2023</h3>
 					<a href="#section-tickets" class="button ls-1  fw-semibold  button-them m-0"
 						data-scrollto="#section-tickets" style="background-color: white !important; color: black;">Get
@@ -966,10 +1027,10 @@
 			</div>
 
 		</div>
-		
+
 		<!-- Footer
 		============================================= -->
-		<div class="container-fluid footer">
+		<div class="footer">
 			<footer id="footer" class="dark bg-dark">
 				<div class="container">
 
@@ -979,95 +1040,97 @@
 						<div class="row align-items-center justify-content-center g-4 mb-lg-0">
 							<div class="col-12">
 								<div class="grid-inner px-4 text-center mx-auto" style="max-width: 54rem;">
-									<h6 style="font-size: 24px; margin-bottom: 2rem;" class="display-5 mt-3 ">Have you made any great
-										achievements in your business? 
-										<p class="nocolor underliner viewport-detect" data-delay="1000"
-											style="--cnvs-underliner-size: 15%; --cnvs-underliner-offset: 10%; font-size: 24px !important;">We are
-											always here to support.</p></h6>
+									<h6 style="font-size: 24px; margin-bottom: 2rem;" class="display-5 mt-3 ">Have you
+										made any great
+										achievements in your business?
+										<p class="nocolor  viewport-detect" data-delay="1000"
+											style="font-size: 24px !important;">We are
+											always here to support.</p>
+									</h6>
 									<a href="#section-tickets" class="button ls-1  fw-semibold  button-them m-0"
 										data-scrollto="#section-tickets" style="color: black;">Register Today</a>
-									
+
 								</div>
 							</div>
-	
+
 							<div class=" col-lg-3 text-center text-lg-start" data-class="down-lg:order-1">
-										<img srcset="assets/images/logos/logo.png, assets/images/logos/logo.png 2x"
-											src="assets/images/logos/logo.png" alt="Logo" style="width: 108px !important;">
-								</div>
-								<div class="col-lg-6 text-center" data-class="down-lg:order-2 down-lg:mt-0">
-									<!-- <div class="d-inline-flex gap-5">
+								<img srcset="assets/images/logos/logo.png, assets/images/logos/logo.png 2x"
+									src="assets/images/logos/logo.png" alt="Logo" style="width: 108px !important;">
+							</div>
+							<div class="col-lg-6 text-center" data-class="down-lg:order-2 down-lg:mt-0">
+								<!-- <div class="d-inline-flex gap-5">
 										<a href="#" class="text-contrast-700 h-text-color">About</a>
 										<a href="#" class="text-contrast-700 h-text-color">Features</a>
 										<a href="#" class="text-contrast-700 h-text-color">News</a>
 										<a href="#" class="text-contrast-700 h-text-color">Help Center</a>
 									</div> -->
-								</div>
-								<div class="col-lg-3 text-center text-lg-end" data-class="down-lg:order-3">
-									<div class="d-inline-flex justify-content-center">
-										<a href="#"
-											class="social-icon si-small text-white rounded-circle bg-white bg-opacity-10 h-bg-facebook"
-											title="Facebook">
-											<i class="fa-brands fa-facebook-f"></i>
-											<i class="fa-brands fa-facebook-f"></i>
-										</a>
+							</div>
+							<div class="col-lg-3 text-center text-lg-end" data-class="down-lg:order-3">
+								<div class="d-inline-flex justify-content-center foot-icon">
+									<a href="#"
+										class="social-icon si-small  rounded-circle bg-white bg-opacity-10 h-bg-facebook"
+										title="Facebook" style="color: #000;">
+										<i class="fa-brands fa-facebook-f"></i>
+										<i class="fa-brands fa-facebook-f"></i>
+									</a>
 
-										<a href="#"
-											class="social-icon si-small text-white rounded-circle bg-white bg-opacity-10 h-bg-twitter"
-											title="Twitter">
-											<i class="fa-brands fa-twitter"></i>
-											<i class="fa-brands fa-twitter"></i>
-										</a>
+									<a href="#"
+										class="social-icon si-small  rounded-circle bg-white bg-opacity-10 h-bg-twitter"
+										title="Twitter" style="color: #000;">
+										<i class="fa-brands fa-twitter"></i>
+										<i class="fa-brands fa-twitter"></i>
+									</a>
 
-										<a href="#"
-											class="social-icon si-small text-white rounded-circle bg-white bg-opacity-10 h-bg-pinterest"
-											title="Pinterest">
-											<i class="fa-brands fa-pinterest-p"></i>
-											<i class="fa-brands fa-pinterest-p"></i>
-										</a>
+									<a href="#"
+										class="social-icon si-small  rounded-circle bg-white bg-opacity-10 h-bg-pinterest"
+										title="Pinterest" style="color: #000;">
+										<i class="fa-brands fa-pinterest-p"></i>
+										<i class="fa-brands fa-pinterest-p"></i>
+									</a>
 
-										<a href="#"
-											class="social-icon si-small text-white rounded-circle bg-white bg-opacity-10 h-bg-whatsapp"
-											title="Whatsapp">
-											<i class="fa-brands fa-whatsapp"></i>
-											<i class="fa-brands fa-whatsapp"></i>
-										</a>
+									<a href="#"
+										class="social-icon si-small  rounded-circle bg-white bg-opacity-10 h-bg-whatsapp"
+										title="Whatsapp" style="color: #000;">
+										<i class="fa-brands fa-whatsapp"></i>
+										<i class="fa-brands fa-whatsapp"></i>
+									</a>
 
-										<a href="#"
-											class="social-icon si-small text-white rounded-circle bg-white bg-opacity-10 h-bg-rss"
-											title="RSS">
-											<i class="fa-solid fa-rss"></i>
-											<i class="fa-solid fa-rss"></i>
-										</a>
+									<a href="#"
+										class="social-icon si-small  rounded-circle bg-white bg-opacity-10 h-bg-rss"
+										title="RSS" style="color: #000;">
+										<i class="fa-solid fa-rss"></i>
+										<i class="fa-solid fa-rss"></i>
+									</a>
 
-										<a href="#"
-											class="social-icon si-small text-white rounded-circle bg-white bg-opacity-10 h-bg-email3 me-0"
-											title="Mail">
-											<i class="fa-solid fa-envelope"></i>
-											<i class="fa-solid fa-envelope"></i>
-										</a>
-									</div>
+									<a href="#"
+										class="social-icon si-small  rounded-circle bg-white bg-opacity-10 h-bg-email3 me-0"
+										title="Mail" style="color: #000;">
+										<i class="fa-solid fa-envelope"></i>
+										<i class="fa-solid fa-envelope"></i>
+									</a>
 								</div>
 							</div>
-						</div><!-- .footer-widgets-wrap end -->
+						</div>
+					</div><!-- .footer-widgets-wrap end -->
 
-						<!-- Copyrights
+					<!-- Copyrights
 					============================================= -->
-						<div id="copyrights" class="bg-transparent border-top border-default">
-							<div class="row g-3">
-								<div class="col-lg-6 text-center text-lg-start">
-									Copyrights &copy; 2023 All Rights Reserved by SHJSEEN.
-								</div>
+					<div id="copyrights" class="bg-transparent border-top border-default">
+						<div class="row g-3">
+							<div class="col-lg-6 text-center text-lg-start">
+								Copyrights &copy; 2023 All Rights Reserved by SHJSEEN.
+							</div>
 
-								<div class="col-lg-6 text-center text-lg-end">
-									<div class="copyright-links mt-0">
-										<a href="#">Privacy Policy</a>
-										<a href="#">Terms &amp; Conditions</a>
-									</div>
+							<div class="col-lg-6 text-center text-lg-end">
+								<div class="copyright-links mt-0">
+									<a href="#">Privacy Policy</a>
+									<a href="#">Terms &amp; Conditions</a>
 								</div>
 							</div>
-						</div><!-- #copyrights end -->
+						</div>
+					</div><!-- #copyrights end -->
 
-					</div>
+				</div>
 			</footer>
 
 
