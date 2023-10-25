@@ -1,105 +1,499 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en-US">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&Roboto:wght@400;700&display=swap"
-      rel="stylesheet">
-  
-    <!-- Core Style -->
-    <link rel="stylesheet" href="style.css">
-  
-    <!-- Font Icons -->
-    <link rel="stylesheet" href="css/font-icons.css">
-  
-    <!-- Niche Demos -->
-    <link rel="stylesheet" href="demos/conference/conference.css">
-  
-  
-    <!-- Plugins/Components CSS -->
-    <link rel="stylesheet" href="css/swiper.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
-    <style>
-        body {
-  background: #fafbfb;
-}
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<meta name="author" content="Shjseen">
+	<meta name="description" content="">
+
+	<!-- Font Imports -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&Roboto:wght@400;700&display=swap"
+		rel="stylesheet">
+
+	<!-- Core Style -->
+	<link rel="stylesheet" href="style.css">
+
+	<!-- Font Icons -->
+	<link rel="stylesheet" href="css/font-icons.css">
+
+	<!-- Niche Demos -->
+	<link rel="stylesheet" href="demos/conference/conference.css">
 
 
-/* FOOTER STYLES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.page-footer {
-  position: fixed;
-  right: 0;
-  bottom: 50px;
-  display: flex;
-  align-items: center;
-  padding: 5px;
-  z-index: 1;
-}
+	<!-- Plugins/Components CSS -->
+	<link rel="stylesheet" href="css/swiper.css">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="css/custom.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<!-- Document Title
+	============================================= -->
+	<title>Shjseen</title>
 
-.page-footer a {
-  display: flex;
-  margin-left: 4px;
-}
-    </style>
 </head>
-<body>
-    <div class="container my-5">
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <h1 class="mb-3">Contact Us</h1>
-            <form>
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label for="your-name" class="form-label">Your Name</label>
-                  <input type="text" class="form-control" id="your-name" name="your-name" required>
-                </div>
-                <div class="col-md-6">
-                  <label for="your-surname" class="form-label">Your Surname</label>
-                  <input type="text" class="form-control" id="your-surname" name="your-surname" required>
-                </div>
-                <div class="col-md-6">
-                  <label for="your-email" class="form-label">Your Email</label>
-                  <input type="email" class="form-control" id="your-email" name="your-email" required>
-                </div>
-                <div class="col-md-6">
-                  <label for="your-subject" class="form-label">Your Subject</label>
-                  <input type="text" class="form-control" id="your-subject" name="your-subject">
-                </div>
-                <div class="col-12">
-                  <label for="your-message" class="form-label">Your Message</label>
-                  <textarea class="form-control" id="your-message" name="your-message" rows="5" required></textarea>
-                </div>
-                <div class="col-12">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <button data-res="<?php echo $sum; ?>" type="submit" class="btn btn-dark w-100 fw-bold">Send</button>
-                    </div>
-                  </div>
-                </div>
+
+<body class="stretched">
+
+	<style>
+		.logo-new {
+			background: white;
+		}
+
+		body {
+			overflow-x: hidden;
+		}
+
+		.button-them {
+			background-color: #eacd02 !important;
+		}
+
+		@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@700&display=swap");
+
+		:root {
+			/* Colors */
+			--brand-color: hsl(46, 100%, 50%);
+			--black: hsl(0, 0%, 0%);
+			--white: hsl(0, 0%, 100%);
+			/* Fonts */
+			--font-title: "Montserrat", sans-serif;
+			--font-text: "Lato", sans-serif;
+		}
+
+		/* RESET */
+
+		/* Box sizing rules */
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+		}
+
+		/* Remove default margin */
+		body,
+		h2,
+		p {
+			margin: 0;
+		}
+
+		/* GLOBAL STYLES */
+		body {
+			display: grid;
+			place-items: center;
+			height: 100vh;
+		}
+
+		h2 {
+			font-size: 2.25rem;
+			font-family: var(--font-title);
+			color: var(--white);
+			line-height: 1.1;
+		}
+
+		p {
+			font-family: var(--font-text);
+			font-size: 1rem;
+			line-height: 1.5;
+			color: var(--white);
+		}
+
+		.flow>*+* {
+			margin-top: var(--flow-space, 1em);
+		}
+
+		/* CARD COMPONENT */
+
+		.card {
+			display: grid;
+			place-items: center;
+			/* height: 28.125rem; */
+			overflow: hidden;
+			border-radius: 0.625rem;
+			box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+			height: 20rem;
+			width: 16rem;
+			margin-bottom: 2rem;
+		}
+
+		.pending-tm {
+			padding: 1rem;
+			color: #000;
+		}
+
+		.card>* {
+			grid-column: 1 / 2;
+			grid-row: 1 / 2;
+		}
+
+		.card__background {
+			object-fit: cover;
+			max-width: 100%;
+			height: 100%;
+		}
+
+		.card__content {
+			--flow-space: 0.9375rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-self: flex-end;
+			height: 91%;
+			padding: 12% 1.25rem 1.875rem;
+			background: linear-gradient(180deg,
+					hsla(0, 0%, 0%, 0) 0%,
+					hsla(0, 0%, 0%, 0.3) 10%,
+					hsl(0, 0%, 0%) 100%);
+		}
+
+		.card__content--container {
+			--flow-space: 1.25rem;
+		}
+
+		.card__title {
+			position: relative;
+			width: fit-content;
+			width: -moz-fit-content;
+			color: white;
+			/* Prefijo necesario para Firefox  */
+		}
+
+		.card__title::after {
+			content: "";
+			position: absolute;
+			height: 0.3125rem;
+			width: calc(100% + 1.25rem);
+			bottom: calc((1.25rem - 0.5rem) * -1);
+			left: -1.25rem;
+			background-color: var(--brand-color);
+		}
+
+		.card__button {
+			padding: 0.75em 1.6em;
+			width: fit-content;
+			width: -moz-fit-content;
+			/* Prefijo necesario para Firefox  */
+			font-variant: small-caps;
+			font-weight: bold;
+			border-radius: 0.45em;
+			border: none;
+			background-color: var(--brand-color);
+			font-family: var(--font-title);
+			font-size: 1.125rem;
+			color: var(--black);
+		}
+
+		.card__button:focus {
+			outline: 2px solid black;
+			outline-offset: -5px;
+		}
+
+		@media (any-hover: hover) and (any-pointer: fine) {
+			.card__content {
+				transform: translateY(62%);
+				transition: transform 500ms ease-out;
+				transition-delay: 500ms;
+			}
+
+			.card__title::after {
+				opacity: 0;
+				transform: scaleX(0);
+				transition: opacity 1000ms ease-in, transform 500ms ease-out;
+				transition-delay: 500ms;
+				transform-origin: right;
+			}
+
+			.card__background {
+				transition: transform 500ms ease-in;
+			}
+
+			.card__content--container> :not(.card__title),
+			.card__button {
+				opacity: 0;
+				transition: transform 500ms ease-out, opacity 500ms ease-out;
+			}
+
+			.card:hover,
+			.card:focus-within {
+				transform: scale(1.05);
+				transition: transform 500ms ease-in;
+			}
+
+			.card:hover .card__content,
+			.card:focus-within .card__content {
+				transform: translateY(0);
+				transition: transform 500ms ease-in;
+			}
+
+			.card:focus-within .card__content {
+				transition-duration: 0ms;
+			}
+
+			.card:hover .card__background,
+			.card:focus-within .card__background {
+				transform: scale(1.3);
+			}
+
+			.card:hover .card__content--container> :not(.card__title),
+			.card:hover .card__button,
+			.card:focus-within .card__content--container> :not(.card__title),
+			.card:focus-within .card__button {
+				opacity: 1;
+				transition: opacity 500ms ease-in;
+				transition-delay: 1000ms;
+			}
+
+			.card:hover .card__title::after,
+			.card:focus-within .card__title::after {
+				opacity: 1;
+				transform: scaleX(1);
+				transform-origin: left;
+				transition: opacity 500ms ease-in, transform 500ms ease-in;
+				transition-delay: 500ms;
+			}
+		}
+
+		.section-1 {
+			background: linear-gradient(rgba(0, 142, 99, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/call-to-action-bg.jpg) fixed center center;
+			background-size: cover;
+			padding: 60px 0;
+			height: 300px;
+		}
+
+		.section-2 {
+			background: linear-gradient(rgba(0, 142, 99, 0.1), rgba(0, 0, 0, 0.1)), url(assets/images/savetime.jpg) fixed center center;
+			background-size: cover;
+			padding: 60px 0;
+			height: 300px;
+		}
+
+		.header-chir {
+			padding-bottom: 2rem;
+			text-align: center;
+		}
+
+		.team-desc {
+			position: absolute;
+			left: 0;
+			bottom: 15px;
+			width: 100%;
+			text-align: center !important;
+			transition: transform .2s ease-out;
+			z-index: 1 !important;
+			padding-left: 1rem !important;
+			padding-right: 1rem !important;
+		}
+
+		.menu-link {
+			color: #000 !important;
+		}
+
+		.text-caro {
+			font-size: 27px;
+		}
+
+		.text-caro-1 {
+			font-size: 2rem;
+			font-weight: bold;
+		}
+
+		.slider-uper {
+			margin: 0rem;
+			position: relative;
+			bottom: 6em !important;
+		}
+
+		@media only screen and (max-width: 720px) {
+			.last-add {
+				font-size: 20px;
+			}
+
+			.last-add-2 {
+				font-size: 15px;
+			}
+
+			.logo-new {
+				height: 50px !important;
+			}
+
+			.menu-link {
+				color: white !important;
+			}
+
+			.section-reg-text {
+				font-size: 20px !important;
+				position: relative;
+				bottom: 1rem;
+			}
+
+			.bordof-chir {
+				font-size: 28px !important;
+				padding-bottom: 1rem;
+			}
+
+			.foot-icon {
+				padding-bottom: 1rem !important;
+			}
+
+			.bord-all {
+				position: relative;
+				left: 4rem !important;
+				top: 1rem !important;
+			}
+
+			.regi-card {
+				margin: 10% !important;
+			}
+		}
+
+		.section-reg-text {
+			font-size: 2.5rem;
+		}
+
+		.h-text-color:hover {
+			color: #fff !important;
+		}
+	</style>
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header floating-header">
+			<div id="header-wrap">
+				<div class="container">
+					<div class="header-row justify-content-lg-between">
+
+						<!-- Logo
+						============================================= -->
+						<div id="logo" class="me-lg-0">
+							<a href="demo-conference.html" data-scrollto="#slider">
+								<img class="logo-default" src="assets/images/logos/logo.png" style="height: 50px !important;"
+									alt="Sjseen Logo">
+								<img class="logo-dark"
+									srcset="demos/conference/images/logo-dark.png, assets/images/logos/logo.png 2x"
+									src="assets/images/logos/logo.png" alt="Sjseen Logo">
+							</a>
+						</div><!-- #logo end -->
+
+						<div class="primary-menu-trigger">
+							<button class="cnvs-hamburger" type="button" title="Open Mobile Menu">
+								<span class="cnvs-hamburger-box"><span class="cnvs-hamburger-inner"></span></span>
+							</button>
+						</div>
+
+						<!-- Primary Navigation
+						============================================= -->
+						<nav class="primary-menu">
+
+							<ul class="menu-container one-page-menu" data-easing="easeInOutExpo" data-speed="1250"
+								data-offset="160">
+								<li class="menu-item"><a class="menu-link ls-1 text-uppercase" href="#"
+										data-href="#section-about">
+										<div>About Us</div>
+									</a>
+								</li>
+								<li class="menu-item"><a class="menu-link ls-1 text-uppercase" href="#"
+										data-href="#section-speakers">
+										<div>Award Categories</div>
+									</a>
+								</li>
+								<li class="menu-item"><a class="menu-link ls-1 text-uppercase" href="contactus.html"
+									>
+									<div>Contact Us</div>
+								</a>
+							</li>
+								<!-- <li class="menu-item"><a class="menu-link ls-1 text-uppercase" href="#"
+										data-href="#section-speakers">
+										<div>Contact Us</div>
+									</a>
+								</li> -->
+							</ul>
+
+						</nav><!-- #primary-menu end -->
+
+						<!-- Primary Navigation
+						============================================= -->
+						<nav class="primary-menu">
+
+							<ul class="menu-container header-button">
+								<li class="menu-item">
+									<a href="#section-tickets"
+										class="button ls-1 text-uppercase fw-semibold button-effect m-0"
+										data-class="down-lg:px-1" data-scrollto="#section-tickets">EN</a>
+								</li>
+							</ul>
+
+						</nav><!-- #primary-menu end -->
+
+					</div>
+				</div>
+			</div>
+			<div class="header-wrap-clone"></div>
+		</header><!-- #header end -->
+
+
+<!--contactform-->
+
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-9" style="color: #fff;">
+      <h1 class="mb-3">Contact Us</h1>
+      <form>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="your-name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="your-name" name="your-name" required>
+          </div>
+          <div class="col-md-6">
+            <label for="your-surname" class="form-label">Your Surname</label>
+            <input type="text" class="form-control" id="your-surname" name="your-surname" required>
+          </div>
+          <div class="col-md-6">
+            <label for="your-email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="your-email" name="your-email" required>
+          </div>
+          <div class="col-md-6">
+            <label for="your-subject" class="form-label">Your Subject</label>
+            <input type="text" class="form-control" id="your-subject" name="your-subject">
+          </div>
+          <div class="col-12">
+            <label for="your-message" class="form-label">Your Message</label>
+            <textarea class="form-control" id="your-message" name="your-message" rows="5" required></textarea>
+          </div>
+          <div class="col-12">
+            <div class="row">
+              <div class="col-md-6">
+                <button data-res="<?php echo $sum; ?>" type="submit" class="button ls-1 text-uppercase fw-semibold button-effect m-0">Send</button>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
-	<!-- Footer
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+		<!-- Footer
 		============================================= -->
 		<footer id="footer" class="dark bg-dark">
 			<div class="container">
@@ -192,5 +586,59 @@
 
 			</div>
 		</footer><!-- #footer end -->
+
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="uil uil-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/plugins.min.js"></script>
+	<script src="js/functions.bundle.js"></script>
+
+	<!-- Parallax Script
+	============================================= -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+
+
+	<script>
+		$(".hover").mouseleave(
+			function () {
+				$(this).removeClass("hover");
+			}
+		);
+		jQuery(document).ready(function () {
+			// Ticket Price Changed Script
+			var elementEarlyBird = jQuery("#early-bird-person"),
+				element1Day = jQuery("#1-day-pricing-person"),
+				element2Day = jQuery("#2-day-pricing-person"),
+				elementFull = jQuery("#full-pricing-person");
+
+			elementEarlyBird.on('change', function () {
+				pricingEarlyBird = jQuery(this).prop('value');
+				jQuery('.early-bird-pricing').html('$' + (pricingEarlyBird * 39));
+			});
+
+			element1Day.on('change', function () {
+				pricing1day = jQuery(this).prop('value');
+				jQuery('.1-day-pricing').html('$' + (pricing1day * 29));
+			});
+
+			element2Day.on('change', function () {
+				pricing2Day = jQuery(this).prop('value');
+				jQuery('.2-day-pricing').html('$' + (pricing2Day * 49));
+			});
+
+			elementFull.on('change', function () {
+				pricingFull = jQuery(this).prop('value');
+				jQuery('.full-pricing').html('$' + (pricingFull * 69));
+			});
+		});
+	</script>
+
 </body>
+
 </html>
