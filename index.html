@@ -366,6 +366,17 @@
 		.h-text-color:hover {
 			color: #fff !important;
 		}
+
+		.swiper-slide-bg::after {
+			content: "";
+			background: rgba(0, 0, 0, 0.5);
+			/* Adjust the last value (0.5) for opacity */
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
 	</style>
 
 	<!-- Document Wrapper
@@ -383,8 +394,8 @@
 						============================================= -->
 						<div id="logo" class="me-lg-0">
 							<a href="demo-conference.html" data-scrollto="#slider">
-								<img class="logo-default" src="assets/images/logos/logo.png" style="height: 50px !important;"
-									alt="Sjseen Logo">
+								<img class="logo-default" src="assets/images/logos/logo.png"
+									style="height: 50px !important;" alt="Sjseen Logo">
 								<img class="logo-dark"
 									srcset="demos/conference/images/logo-dark.png, assets/images/logos/logo.png 2x"
 									src="assets/images/logos/logo.png" alt="Sjseen Logo">
@@ -403,8 +414,7 @@
 
 							<ul class="menu-container one-page-menu" data-easing="easeInOutExpo" data-speed="1250"
 								data-offset="160">
-								<li class="menu-item"><a class="menu-link ls-1 text-uppercase" href="aboutUs.html"
-										data-href="#section-about">
+								<li class="menu-item"><a class="menu-link ls-1 text-uppercase" href="aboutUs.html">
 										<div>About Us</div>
 									</a>
 								</li>
@@ -413,11 +423,10 @@
 										<div>Award Categories</div>
 									</a>
 								</li>
-								<li class="menu-item"><a class="menu-link ls-1 text-uppercase" href="contactus.html"
-									>
-									<div>Contact Us</div>
-								</a>
-							</li>
+								<li class="menu-item"><a class="menu-link ls-1 text-uppercase" href="contactus.html">
+										<div>Contact Us</div>
+									</a>
+								</li>
 								<!-- <li class="menu-item"><a class="menu-link ls-1 text-uppercase" href="#"
 										data-href="#section-speakers">
 										<div>Contact Us</div>
@@ -485,6 +494,7 @@
 									</div>
 								</div>
 							</div>
+
 							<div class="swiper-slide-bg"
 								style="background-image: url('./assets/images/banner3.png'); background-position: center top;">
 							</div>
@@ -619,8 +629,7 @@
 								</figure>
 								<figure class="snip1519">
 									<figcaption>
-										<img class="ion-ios-rose-outline"
-											src="cardsImage/Gulf_Excellence.jpg"></img>
+										<img class="ion-ios-rose-outline" src="cardsImage/Gulf_Excellence.jpg"></img>
 										<h2>Sharjah Gulf Excellence Award <br>
 											<sub>(This award is by nomination by the
 												Sharjah Excellence Award Board of Trustees )</sub>
@@ -662,7 +671,7 @@
 
 				</div>
 				<!-- #Related Events end -->
-			
+
 				<!-- Section Speakers
 				============================================= -->
 				<div id="section-speakers" class="section page-section bg-transparent pt-0 mt-6">
